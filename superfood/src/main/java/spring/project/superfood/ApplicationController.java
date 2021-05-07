@@ -28,7 +28,7 @@ public class ApplicationController {
     @GetMapping(value = "/logout")
     public String logout() {return "login"; }
 
-    private User getPrincipal() {
+    public User getPrincipal() {
         User user = null;
         if (SecurityContextHolder.getContext().getAuthentication().getPrincipal() instanceof User) {
             user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -39,5 +39,13 @@ public class ApplicationController {
     public String register(@ModelAttribute User user, Model model) {
         model.addAttribute("user", user);
         return "register";
+    }
+    @GetMapping(value = "/contact")
+    public String goContact() {
+        return "contact";
+    }
+    @GetMapping(value = "/about")
+    public String goAbout() {
+        return "about";
     }
 }

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import spring.project.superfood.models.User;
+import spring.project.superfood.service.ProductService;
 import spring.project.superfood.service.UserService;
 
 import javax.validation.Valid;
@@ -42,8 +43,5 @@ public class UserController {
         userService.save(user);
         return "redirect:/login";
     }
-//    @PostMapping("/login")
-//    public String checkLogin(@Valid User user) {
-//        if (userService.userExists())
-//    }
+
 }

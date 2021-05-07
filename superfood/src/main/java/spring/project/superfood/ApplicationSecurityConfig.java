@@ -33,7 +33,6 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter{
     public UserDetailsService userDetailsService() {
         return (UserDetailsService) email -> {
             Optional<User> user = userService.findUserByEmail(email);
-
             if (user.isEmpty()) {
                 throw new UsernameNotFoundException("Not found email");
             }

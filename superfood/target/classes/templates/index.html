@@ -13,23 +13,23 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: aqua;">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">SUPER FOOD</a>
+        <a class="navbar-brand" th:href="@{/index}">SUPER FOOD</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">HOME</a>
+              <a class="nav-link active" aria-current="page" th:href="@{/index}">HOME</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="@{/product}">FOOD</a>
+              <a class="nav-link active" th:href="@{/product}">FOOD</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="@{/about}">ABOUT US</a>
+              <a class="nav-link active" th:href="@{/about}">ABOUT US</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="@{/contact}">CONTACT US</a>
+              <a class="nav-link active" th:href="@{/contact}">CONTACT US</a>
             </li>
             <form class="d-flex" id="search-area">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -40,8 +40,8 @@
                 Welcome, <span th:text="${#authentication.getPrincipal().getName()}"></span>
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li><a class="dropdown-item" href="#">My Store</a></li>
+                <li><a class="dropdown-item" th:href="@{profile}">Profile</a></li>
+                <li><a class="dropdown-item" th:href="@{/mystore}">My Store</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" th:href="@{/logout}">Logout</a></li>
               </ul>
