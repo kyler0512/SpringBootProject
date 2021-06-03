@@ -37,6 +37,7 @@ public class ProductController {
         model.addAttribute("myProduct", productService.findByUser(getUser()));
         return "mystore";
     }
+
     @PostMapping("/mystore")
     public String addProduct(Product product) {
         product.setUser(getUser());

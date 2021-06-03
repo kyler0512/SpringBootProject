@@ -54,17 +54,19 @@
 </nav>
 <div id="container">
   <div th:each="product:${food}">
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title" th:text="${product.productName}"></h5>
-        <p class="card-text" th:text="${product.description}"></p>
+    <form th:action="@{/payment}">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title" th:text="${product.productName}" th:name="productName"></h5>
+          <p class="card-text" th:text="${product.description}" th:name="description"></p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" th:text="${product.productType}" th:name="productType"></li>
+          <li class="list-group-item" th:text="${product.price}" th:name="price"></li>
+          <button type="submit" class="btn btn-primary">Buy</button>
+        </ul>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item" th:text="${product.productType}"></li>
-        <li class="list-group-item" th:text="${product.price}"></li>
-        <button type="submit" class="btn btn-primary">Buy</button>
-      </ul>
-    </div>
+    </form>
   </div>
 </div>
 

@@ -47,41 +47,11 @@
               </ul>
             </li>
           </ul>
+          
         </div>
       </div>
     </nav>
-    <div class="row justify-content-center">
-      <div class="col col-md-5">
-        <form th:action="@{/payment/confirm}" method="post">
-          <div class="form-row py-1">
-            <label>Name: </label>
-            <input th:value="${#authentication.getPrincipal().getName()}" readonly class="bill-detail">
-          </div>
-          <div class="form-row py-1">
-            <label>Email: </label>
-            <input th:value="${#authentication.getPrincipal().getEmail()}" readonly class="bill-detail">
-          </div>
-          <div class="form-row py-1">
-            <label>Product: </label>
-            <input type="text" th:value="${name}" readonly class="bill-detail">
-          </div>
-          <div class="form-row py-1">
-            <label>Price: </label>
-            <input type="text" th:value="${price}" readonly class="bill-detail">
-          </div>
-          <div class="form-row py-1">
-            <label>Address</label>
-            <input name="address" class="bill-detail">
-          </div>
-          <div class="form-row py-1">
-            <label>Phone Number</label>
-            <input type="number" class="bill-detail">
-          </div>
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-    </div>
-
+    
 
 
     
